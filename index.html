@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMPRESA DE MASHA</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2193d055c9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <img src="logop.png" alt="unidad educativa el progreso b">
+        </div>
+        <ul class="nav_links">
+            <li><a href="#inicio">inicio</a></li>
+            <li><a href="#menu">menu</a></li>
+            <li><a href="#reservas">reservas</a></li>
+            <li><a href="#contacto">contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="inicio" class="hero">
+    <div class="hero-content">
+        <h2>Bienvenidos al sushi MASHA</h2>
+        <p>la mejor experiencia gastronomica</p>
+        <a href="#menu" class="btn">ver menu</a>
+    </div>
+</section>
+
+<section id="menu" class="menu_section">
+    <h2>Nuestro menu</h2>
+    <div class="menu_grid">
+
+        <div class="menu_item">
+            <img src="plato1.jpg" alt="sushi mix">
+            <h3>sushi mix</h3>
+            <p>seleccion variada de nigiris y makis</p>
+            <div class="contador">
+                <button onclick="cambiarCantidad(0,-1)">-</button>
+                <span id="cantidad0">0</span>
+                <button onclick="cambiarCantidad(0,1)">+</button>
+                <span>100.99$</span>
+            </div>
+        </div>
+
+        <div class="menu_item">
+            <img src="plato2.jpg" alt="sushi mix">
+            <h3>sashimi</h3>
+            <p>seleccion variada de nigiris y makis</p>
+            <div class="contador">
+                <button onclick="cambiarCantidad(1,-1)">-</button>
+                <span id="cantidad1">0</span>
+                <button onclick="cambiarCantidad(1,1)">+</button>
+                <span>150.99$</span>
+            </div>
+        </div>
+
+        <div class="menu_item">
+            <img src="plato3.jpg" alt="sushi mix">
+            <h3>pez</h3>
+            <p>seleccion variada de nigiris y makis</p>
+            <div class="contador">
+                <button onclick="cambiarCantidad(2,-1)">-</button>
+                <span id="cantidad2">0</span>
+                <button onclick="cambiarCantidad(2,1)">+</button>
+                <span>200.99$</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="total-box">
+        Total: <span id="total">0</span> $
+    </div>
+</section>
+
+<section id="reservas" class="reservas_section">
+    <h2>RESERVA TU MESA</h2>
+    <form class="reserva_form"> 
+        <input type="text" placeholder="Nombre completo" required>
+        <input type="email" placeholder="Email">
+        <input type="tel" placeholder="telefono">
+        <input type="date">
+        <input type="time">
+        <select>
+            <option value="">numero de personas</option>
+            <option value="1">1 persona</option>
+            <option value="2">2 personas</option>
+            <option value="3">3 personas</option>
+            <option value="4">4 personas</option>
+            <option value="5">+5 personas</option>
+        </select>
+
+        <h3>Total del pedido:</h3>
+        <input type="text" id="totalInput" readonly>
+
+        <button type="submit" class="btn">reservar</button>
+    </form>
+</section>
+
+<section id="contacto" class="contacto_section">
+    <h2>contacto</h2>
+    <div class="contacto_info">
+        <div>
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Av.las rosas, san roque</p>
+        </div>
+        <div>
+            <i class=" fas fa-phone"></i>
+            <p>63428931</p>
+        </div>
+        <div>
+            <i class=" fas fa-envelope"></i>
+            <p>juanyessid@gmail.com</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; sushi MASHA. todos los derechos reservados</p>
+</footer>
+
+<script>
+    let precios = [100.99,150.99,200.99];
+    let cantidades = [0,0,0];
+
+    function cambiarCantidad(index, cambio){
+        cantidades[index] += cambio;
+        if(cantidades[index] < 0) cantidades[index] = 0;
+        document.getElementById("cantidad"+index).innerText = cantidades[index];
+        calcularTotal();
+    }
+
+    function calcularTotal(){
+        let total = 0;
+        for(let i=0;i<precios.length;i++){
+            total += precios[i]*cantidades[i];
+        }
+        document.getElementById("total").innerText = total.toFixed(2);
+        document.getElementById("totalInput").value = total.toFixed(2) + " $";
+    }
+</script>
+
+</body>
+</html>

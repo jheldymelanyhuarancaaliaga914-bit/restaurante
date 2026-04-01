@@ -1,0 +1,163 @@
+*{
+    padding:0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+header{
+    background-color: black;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+nav{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+.logo h1{
+    font-size: 1.8rem;
+    color: #ff0000;
+}
+.nav_links{
+    display: flex;
+    list-style: none;
+}
+.nav_links li a{
+    color:white;
+    text-decoration: none;
+    padding: .5rem 1rem;
+}
+.nav_links li a:hover{
+    color:#ff0000;
+}
+.hero{
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0, 0.5),rgba(0,0,0, 0.5)), url(fondo.jpg) center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+.hero-content h2{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.hero-content p{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.btn{
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #ff0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.btn:hover{
+    background-color: #cc0000;
+}
+.menu_section{
+    padding: 5rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.menu_section h2{
+    margin-bottom: 3rem;
+}
+.menu_grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.menu_item{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0, 0.1);
+}
+.menu_item img{
+    width: 100%;
+    border-radius: 6px;
+}
+.menu_item h3{
+    margin: 1rem 0;
+}
+.precio{
+    display: block;
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+.reservas_section{
+    padding: 5rem 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+.reserva_form{
+    max-width: 600px;
+    margin: 2rem auto;
+    display: grid;
+    gap: 1rem;
+}
+.reserva_form input,
+.reserva_form select{
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.contacto_section{
+    padding: 5rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.contacto_info{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+.contacto_info i{
+    font-size: 2rem;
+    color: #ff0000;
+    margin-bottom: 1rem;
+}
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+@media (max-width: 430px) {
+    header{
+        position: static;
+    }
+    header nav {
+        display: flex;
+        flex-direction: column;
+    }
+    .nav_links{
+        flex-direction: column;
+        margin: 1rem 0;
+        text-align: center;
+        gap: 1rem;
+    }
+}
